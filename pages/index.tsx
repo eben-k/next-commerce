@@ -2,11 +2,12 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ProductList from "../components/ProductList";
 import { IProduct } from "../components/Product";
+import { apiKey } from '../utils';
 
 import Head from "next/head";
 import { NextPage } from "next";
 
-// import "../styles.scss";
+import "../styles.scss";
 
 interface IIndexProps {
   products: IProduct[];
@@ -16,12 +17,10 @@ const Index: NextPage<IIndexProps> = (props: IIndexProps) => {
   return (
     <div className="app">
       <Head>
-        Head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
         <script
           src="https://cdn.snipcart.com/scripts/2.0/snipcart.js"
-          data-api-key="ZWNkMjNhMzYtZjVlYi00MTJkLWIxOTctOWI2M2IzZDFkOTRlNjM3MjQ0NDkzNjg4ODM2NDE2
-"
+          data-api-key={`${apiKey}`}
           id="snipcart"
         ></script>
         <link
